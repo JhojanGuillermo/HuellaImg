@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-huellaimg" version="0.0.1">
+    <name>HuellaImg</name>
+
+    <description>Este Cordova Plugin convertira el text WSQ a Img</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,img,alert</keywords>
+    <repo>https://github.com/JhojanGuillermo/HuellaImg/HuellaImg.git</repo>
+    <issue>https://github.com/JhojanGuillermo/HuellaImg/issues</issue>
+  
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+  
+    <js-module src="www/huellaimg.js" name="huellaimgPlugin">
+        <clobbers target="window.plugins.huellaimgPlugin" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="HuellaImg">
+                <param name="android-package" value="com.jguiller.cordova.plugin.HuellaImg"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/HuellaImg.java" target-dir="src/com/jguiller/cordova/plugin" />
+        
+        <lib-file src="libs/jnbis-2.0.0.jar" />
+    </platform>
+</plugin>
